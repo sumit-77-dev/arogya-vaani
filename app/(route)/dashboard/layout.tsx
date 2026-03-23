@@ -9,7 +9,10 @@ export default function DashboardLayout({
     return (
         <div>
             <AppHeader />
-            {children}
+            <div className='px-4 md:px-10 lg:px-40'>
+                {children}
+            </div>
+            
         </div>
     )
 } 
