@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { AIDoctorAgents } from '@/share/list'
 import DoctorAgentCard from './DoctorAgentCard'
 
+
 function DoctorAgentList() {
   return (
     <div className='mt-5'>

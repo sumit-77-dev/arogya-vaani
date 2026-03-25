@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 
-interface Doctor {
+export interface Doctor {
   id: number;
   specialist: string;
   description: string;
@@ -29,11 +29,11 @@ function DoctorAgentCard({ doctor }: DoctorAgentCardProps) {
       </div>
       
       <h2 className="font-bold text-lg text-center">
-        Dr. AI {doctor.specialist.split(' ')[0]}
+        Dr. {doctor?.specialist?.split(' ')[0] || "Specialist"}
       </h2>
       
       <p className="text-gray-600 text-sm mt-1 text-center">
-        {doctor.specialist} {doctor.specialist.toLowerCase().includes('specialist') ? '' : 'Specialist'}
+        {doctor?.specialist || ""} {(doctor?.specialist || "").toLowerCase().includes('specialist') ? '' : 'Specialist'}
       </p>
       
       <p className="text-gray-500 text-xs mt-3 text-center">
