@@ -1,0 +1,1 @@
+app/provider.tsx(31,49): error TS2353: Object literal may only specify known properties, and 'UserDetail' does not exist in type 'UserDetail'.

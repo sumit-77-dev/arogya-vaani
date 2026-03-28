@@ -20,12 +20,18 @@ function DoctorAgentCard({ doctor }: DoctorAgentCardProps) {
   return (
     <div className="flex flex-col items-center p-6 border rounded-xl shadow-sm bg-white hover:shadow-md transition-shadow h-full">
       <div className="w-[80px] h-[80px] rounded-full bg-slate-200 overflow-hidden mb-4 relative shrink-0">
-        <Image 
-          src={doctor.image} 
-          alt={doctor.specialist} 
-          fill
-          className="object-cover"
-        />
+        {doctor?.image ? (
+          <Image 
+            src={doctor.image} 
+            alt={doctor?.specialist || "Specialist"} 
+            fill
+            className="object-cover"
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center text-slate-400 text-xs text-center">
+            No Image
+          </div>
+        )}
       </div>
       
       <h2 className="font-bold text-lg text-center">

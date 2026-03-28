@@ -9,7 +9,7 @@ export async function POST(request: NextRequest){
             model: "nvidia/nemotron-3-super-120b-a12b:free",
             messages: [
                 {role: 'system', content: JSON.stringify(AIDoctorAgents)},
-                {role: 'user', content: `Based on the notes, suggest the best doctors: ${notes} return object in json only with all detail`}
+                {role: 'user', content: `Based on the notes, suggest more than one best doctors: ${notes} Return ONLY a JSON array of doctors with all detail`}
             ],
         })
 
