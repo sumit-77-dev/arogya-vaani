@@ -1,5 +1,10 @@
 import {createContext} from "react";
-import { UserDetail } from "@/app/provider";
+
+export type UserDetail = {
+  name: string;
+  email: string;
+  credit: number;
+};
 
 export interface UserDetailContextType {
   UserDetail: UserDetail | null;

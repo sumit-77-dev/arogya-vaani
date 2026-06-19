@@ -18,8 +18,10 @@ import { useState } from "react"
 import axios from "axios"
 import { Doctor } from "./DoctorAgentCard"
 import SuggestDoctorCard from "./SuggestDoctorCard"
+import { useRouter } from "next/navigation"
 
 export function AddNewSessionDialog() {
+    const router = useRouter();
     const [note, setNote] = useState<string>('')
     const [loading, setLoading] = useState(false);
     const [suggestDoctor, setSuggestDoctor] = useState<Doctor[]>([]);
@@ -53,6 +55,7 @@ export function AddNewSessionDialog() {
         console.log(result.data);
         if(result.data?.sessionId){
           console.log(result.data.sessionId);
+          router.push('/dashboard/medicalAgent/'+result.data.sessionId);
         }
         setLoading(false);
     }

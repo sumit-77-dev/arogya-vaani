@@ -3,18 +3,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useUser } from "@clerk/nextjs";
-import { UserDetailContext } from "@/context/UserDetailContext";
-
-export type UserDetail = {
-  name: string;
-  email: string;
-  credit: number;
-};
+import { UserDetailContext, UserDetail } from "@/context/UserDetailContext";
 
 export const Provider = ({ children }: { children: React.ReactNode }) => {
     
      
-    const [UserDetail, setUserDetail] = useState<UserDetail | null>(null);
+    const [userDetail, setUserDetail] = useState<UserDetail | null>(null);
     const CreateUser = async () => {   
         const result = await axios.post("/api/user");
         console.log(result.data);
@@ -28,7 +22,7 @@ export const Provider = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
         <div>
-            <UserDetailContext.Provider value={{UserDetail, setUserDetail}}>
+            <UserDetailContext.Provider value={{UserDetail: userDetail, setUserDetail}}>
             {children}
             </UserDetailContext.Provider>
         </div>
