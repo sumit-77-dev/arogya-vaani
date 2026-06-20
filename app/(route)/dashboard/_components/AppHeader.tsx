@@ -18,11 +18,6 @@ function AppHeader() {
       id:3,
       name:'History',
       path:'/history'
-    },
-    {
-      id:4,
-      name:'Pricing',
-      path:'/pricing'
     }
   ]
   return (
